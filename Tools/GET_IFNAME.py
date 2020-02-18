@@ -6,7 +6,6 @@
 
 
 import netifaces as ni
-
 import platform
 
 

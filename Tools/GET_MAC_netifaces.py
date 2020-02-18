@@ -5,7 +5,6 @@
 # 欢迎留言讨论，共同学习进步！
 
 import netifaces
-import platform
 from Tools.GET_IFNAME import get_ifname
 
 
