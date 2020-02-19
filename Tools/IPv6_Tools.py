@@ -6,7 +6,6 @@
 
 
 import re
-import ipaddress
 
 
 def full_ipv6(ipv6):  # 转换为完整的IPv6地址

@@ -6,7 +6,7 @@
 
 import ipaddress
 from multiprocessing.pool import ThreadPool
-from ICMP.Ping_one import ping_one
+from ICMP与IPv6.Ping_one import ping_one
 from Tools.SORT_IP import sort_ip
 
 
