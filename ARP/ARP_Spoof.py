@@ -29,6 +29,7 @@ def arp_spoof(dst, src, ifname):  # 定义毒化方法，毒化dst，使dst相�
               iface=scapy_iface(ifname1), verbose=False)
         # sendp方法发送二层数据包，源mac地址为本地mac，目的地址为被攻击主机的mac地址，arp数据包中，选项为2（reply），
         # 源mac地址为本地mac地址，源ip地址为被毒化主机的ip地址，起到毒化效果，目的mac地址与目的ip地址均为被攻击主机mac及ip地址
+        # 如果采用dst为二层广播，会造成被伪装设备告警地址重叠(免费arp的效果)，并且欺骗效果不稳定，容易抖动！
     # pkt.show()
         print("发送ARP欺骗数据包！欺骗" + dst + ',本机MAC地址为' + hwsrc + '的MAC地址！！！')
         time.sleep(1)
