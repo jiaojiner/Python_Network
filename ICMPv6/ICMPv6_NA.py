@@ -13,7 +13,7 @@ from scapy.layers.inet6 import IPv6, ICMPv6ND_NA, ICMPv6NDOptDstLLAddr
 from scapy.layers.l2 import Ether
 from scapy.sendrecv import sendp
 from Tools.GET_MAC_netifaces import get_mac_address
-from ICMP与IPv6.ICMPv6_NS import icmpv6_ns
+from ICMPv6.ICMPv6_NS import icmpv6_ns
 from Tools.IPv6_Tools import mac_to_ipv6_linklocal
 import logging
 logging.getLogger("scapy.runtime").setLevel(logging.ERROR)  # 清除报错
