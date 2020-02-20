@@ -7,12 +7,12 @@
 # IPv6参考文档
 # https://www.idsv6.de/Downloads/IPv6PacketCreationWithScapy.pdf
 # https://www.ernw.de/download/Advanced%20Attack%20Techniques%20against%20IPv6%20Networks-final.pdf
+
 from scapy.layers.inet6 import IPv6, ICMPv6ND_NS, ICMPv6NDOptSrcLLAddr
 from scapy.sendrecv import sr1
 from Tools.GET_MAC_netifaces import get_mac_address
 from Tools.IPv6_Tools import Solicited_node_multicast_address, mac_to_ipv6_linklocal
 import logging
-
 logging.getLogger("scapy.runtime").setLevel(logging.ERROR)  # 清除报错
 
 

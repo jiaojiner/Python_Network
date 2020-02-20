@@ -9,8 +9,10 @@ import socket
 import sys
 import time
 
-localip = GET_IP_netifaces.get_ip_address(ifname='ens33')
-ipadress = (localip, 8888)
+localnets = input('请输入需要监听的网卡名称：')
+localport = input('请输入需要监听的端口：')
+localip = GET_IP_netifaces.get_ip_address(localnets)
+ipadress = (localip, int(localport))
 udp_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)  # 创建udp的socket套接字
 udp_socket.bind(ipadress)  # 绑定ip地址及端口
 
