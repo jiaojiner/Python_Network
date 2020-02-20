@@ -19,7 +19,7 @@ def Change_MAC_To_Bytes(mac):
     section5 = mac_value >> 8 & 0xff
     section6 = mac_value & 0xff
     # 拼接MAC地址的6个字节,返回转换为字节的MAC地址
-    Bytes_MAC = struct.pack('!6B', section1, section2, section3, section4, section5, section6)
+    Bytes_MAC = struct.pack('6B', section1, section2, section3, section4, section5, section6)
     return Bytes_MAC
 
 

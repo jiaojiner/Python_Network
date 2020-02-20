@@ -6,7 +6,6 @@
 
 
 import struct
-import re
 
 
 def Change_IP_To_Bytes(IP):
