@@ -9,8 +9,8 @@ from Tools.minimumTFTP import Server
 
 def tftpserver(dir):
     print("TFTP服务器准备就绪,根目录为", dir)
-    tftpServer = Server(dir)
-    tftpServer.run()
+    ftpServer = Server(dir)
+    ftpServer.run()
 
 
 if __name__ == '__main__':
