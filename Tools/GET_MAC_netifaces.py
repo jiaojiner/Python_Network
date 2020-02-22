@@ -13,5 +13,5 @@ def get_mac_address(ifname):
 
 
 if __name__ == '__main__':
-    print(get_mac_address("ens33"))
-    # print(get_mac_address("WLAN"))
+    # print(get_mac_address("ens33"))
+    print(get_mac_address("WLAN"))
