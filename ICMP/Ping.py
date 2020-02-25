@@ -44,7 +44,7 @@ def ping_result(dst):
     for i in range(1, 6):  # ping五个包
         ping_result = ping_one(dst, id_ping, i, 64)
         if ping_result:
-            print('%d bytes from %s: icmp_seq=%d ttl=%d time=%4.2f ms' % (
+            print('%d bytes from %s: icmp_seq=%d ttl=%d time=%4.0f ms' % (
                 ping_result[0], ping_result[1], ping_result[2], ping_result[3], ping_result[4]))
             time.sleep(1)
         else:

@@ -26,5 +26,18 @@ def ping_one(dst):  # 构建函数
 
 
 if __name__ == '__main__':
-    result = ping_one('192.168.98.120')
-    print(result)
+    try:
+        while True:
+            dst = input('请输入目的IP地址:')
+            if dst == '':
+                print('目的地址为空，请重新输入！')
+            else:
+                break
+        result = ping_one(dst)
+        if result[-1] == 1:
+            print('目的', result[0], '可达！')
+        else:
+            print('目的', result[0], '不可达！')
+    except KeyboardInterrupt:
+        print('成功接收信号，退户程序！')
+
