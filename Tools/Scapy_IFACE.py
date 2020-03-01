@@ -16,14 +16,21 @@ def scapy_iface(os_name):
     if platform.system() == "Linux":
         return os_name
     elif platform.system() == "Windows":
-        for x, y in ifaces.items():
-            if y.pcap_name is not None:
-                if get_ifname(os_name) == ('{' + y.pcap_name.split('{')[1]):
-                    return x
-                else:
-                    pass
+        # for x, y in ifaces.items():
+        #     if y.pcap_name is not None:
+        #         if get_ifname(os_name) == ('{' + y.pcap_name.split('{')[1]):
+        #             return x
+        #         else:
+        #             pass
+        if_list = get_windows_if_list()
+        # print(if_list)
+        for name_list in if_list:
+            for key_dict, value_dict in name_list.items():
+                # print(key_dict, '--->', value_dict)
+                if value_dict == os_name:
+                    return name_list['description']
 
 
 if __name__ == '__main__':
     # print(ifaces)
-    print(scapy_iface('ens33'))
+    print(scapy_iface('WLAN'))
