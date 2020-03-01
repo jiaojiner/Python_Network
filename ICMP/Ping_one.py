@@ -14,6 +14,7 @@ logging.getLogger("scapy.runtime").setLevel(logging.ERROR)  # 清除报错信息
 def ping_one(dst):  # 构建函数
     ping_pkt = IP(dst=dst)/ICMP() / b'welcome!'  # 构建数据包，目的地址为dst，数据部分为字节字符串welcome！
     ping_result = sr1(ping_pkt, timeout=2, verbose=False)  # 发送数据包并将返回结构赋值到ping_result中
+    # print(ping_result.getlayer(Raw).fields['load'])
     try:
         if ping_result.getlayer(IP).fields['src'] == dst and ping_result.getlayer(ICMP).fields['type'] == 0 \
                 and ping_result.getlayer(Raw).fields['load'] == b'welcome!':

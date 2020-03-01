@@ -19,7 +19,7 @@ def sort_ip(ips):
     # inet_aton(ip) 转换IP到直接字符串
     # >>> inet_aton("172.16.1.1")
     # b'\xac\x10\x01\x01'
-    # struct.unpack("!L", inet_aton(ip))[0] 把直接字符串转换为整数
+    # struct.unpack("!L", inet_aton(ip))[0] 把直接字符串转换为整数--注意主机字节序与网络字节序的区别
     # >>> struct.unpack("!L", inet_aton("172.16.1.1"))
     # (2886729985,)
     # >>> struct.unpack("!L", inet_aton("172.16.1.1"))[0]

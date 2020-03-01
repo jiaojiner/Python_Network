@@ -31,3 +31,21 @@ def get_mac_address(iface):  # 定义获取MAC地址的模块，传入接口名�
 
 if __name__ == "__main__":
     print(get_mac_address('ens33'))
+
+
+# def get_mac(ifname):
+#     ifconfig_result = (os.popen('ifconfig ' + ifname).read()).split('\n')
+#     # print(ifconfig_result)
+#     for ip in ifconfig_result:
+#         if re.findall('(\w{1,2}\:\w{1,2}\:\w{1,2}\:\w{1,2}\:\w{1,2}\:\w{1,2})',ip):
+#             re_result = re.findall('(\w{1,2}\:\w{1,2}\:\w{1,2}\:\w{1,2}\:\w{1,2}\:\w{1,2})',ip)
+#             for mac in re_result:
+#                 return str(mac)
+#             break
+#     else:
+#         return None
+#
+#
+# if __name__ == '__main__':
+#     mac_result = get_mac('ens33')
+#     print(mac_result)

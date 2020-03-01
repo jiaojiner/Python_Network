@@ -5,11 +5,15 @@
 # 欢迎留言讨论，共同学习进步！
 
 from Tools import GET_IP_netifaces
+from Tools import GET_IP_IFCONFIG
 from ARP import ARP_Request
 
 
 def arp_free(ifname='ens33'):
+    # localip = (GET_IP_IFCONFIG.get_ip(ifname))[-1]
+    # print(localip)
     localip = GET_IP_netifaces.get_ip_address(ifname)
+    print(localip)
     pkt = ARP_Request.arp_request(localip, ifname)
     if pkt[-1]:
         return pkt[0], pkt[-1]

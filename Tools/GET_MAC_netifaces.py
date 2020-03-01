@@ -9,9 +9,10 @@ from Tools.GET_IFNAME import get_ifname
 
 
 def get_mac_address(ifname):
+    # print(netifaces.ifaddresses(get_ifname(ifname))[netifaces.AF_LINK])
     return netifaces.ifaddresses(get_ifname(ifname))[netifaces.AF_LINK][0]['addr']
 
 
 if __name__ == '__main__':
-    # print(get_mac_address("ens33"))
-    print(get_mac_address("WLAN"))
+    print(get_mac_address("ens33"))
+    # print(get_mac_address("WLAN"))
