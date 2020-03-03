@@ -9,12 +9,13 @@ import dns.resolver
 
 def dnspython(domain, Type="A"):
     result = dns.resolver.query(domain, Type)
+    # print(result)
     return_result = []
     if Type == "A" or Type == "AAAA":
         for i in result.response.answer:
             # print(i)
             for j in i:
-                # print(j)
+                # print(type(j))
                 return_result.append(j.address)
     elif Type == "CNAME" or Type == "NS":
         for i in result.response.answer:

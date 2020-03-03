@@ -4,11 +4,10 @@
 # 本人QQ：1945962391 
 # 欢迎留言讨论，共同学习进步！
 
-
 from scapy.layers.dhcp import BOOTP, DHCP
 from scapy.layers.inet import IP, UDP
 from scapy.layers.l2 import Ether
-from scapy.sendrecv import sendp
+from scapy.sendrecv import sendp, srp
 from Tools.GET_MAC_netifaces import get_mac_address
 from Tools.Change_MAC_To_Bytes import Change_MAC_To_Bytes
 from Tools.Scapy_IFACE import scapy_iface  # 获取scapy iface的名字
@@ -36,6 +35,7 @@ bytes_requested_options = struct.pack("8B", requested_option_1,
                                             requested_option_6,
                                             requested_option_8,
                                             requested_option_7)
+# print(bytes_requested_options)
 
 
 def chaddr(info):
@@ -57,7 +57,11 @@ def DHCP_Discover_Sendonly(ifname, MAC, wait_time=2):
                                                                                                                                  ('param_req_list',
                                                                                                                                   bytes_requested_options),
                                                                                                                                  ('end')])
-
+    # # discover.show()
+    # discover_result = srp1(discover)
+    # discover_result.show()
+    # result = scapy_iface(ifname)
+    # print(result)
     if wait_time != 0:
         time.sleep(wait_time)
         sendp(discover,
@@ -71,5 +75,6 @@ def DHCP_Discover_Sendonly(ifname, MAC, wait_time=2):
 
 if __name__ == '__main__':
     # 使用Linux解释器 & WIN解释器
-    Local_MAC = get_mac_address("ens33")
-    DHCP_Discover_Sendonly("ens33", Local_MAC)
+    Local_MAC = get_mac_address('WLAN')
+    # print(Local_MAC)
+    DHCP_Discover_Sendonly('WALN', Local_MAC)

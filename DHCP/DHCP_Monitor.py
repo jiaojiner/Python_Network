@@ -6,11 +6,11 @@
 
 
 from scapy.layers.dhcp import DHCP, BOOTP
+from scapy.sendrecv import sniff
 from Tools.Change_Chaddr_To_MAC import Change_Chaddr_To_MAC
 from Tools.Scapy_IFACE import scapy_iface  # 获取scapy iface的名字
 import logging
 logging.getLogger("scapy.runtime").setLevel(logging.ERROR)  # 清除报错
-
 
 
 def DHCP_Monitor(pkt):
@@ -73,4 +73,4 @@ def DHCP_Sinffer(ifname):
 
 if __name__ == '__main__':
     # 使用Linux解释器 & WIN解释器
-    DHCP_Sinffer('Net1')
+    DHCP_Sinffer('WLAN')

@@ -6,12 +6,16 @@
 
 
 from telnetlib import Telnet
-# import re,可以使用正则表达式匹配回显，然后做判断，决定下一步的操作
+# import re  # 可以使用正则表达式匹配回显，然后做判断，决定下一步的操作
 import time
 
 
 def TelnetClient(ip, username, password, cmd_list, enable='csr', verbose=True):
     tn = Telnet(ip, 23)
+    # print(tn.expect([], timeout=1))
+    # print(tn.expect([], timeout=1)[2])
+    # print(tn.expect([], timeout=1)[2].decode())
+    # print(tn.expect([], timeout=1)[2].decode().strip())
     rackreply = tn.expect([], timeout=1)[2].decode().strip()  # 读取回显
     if verbose:
         print(rackreply)  # 打印回显

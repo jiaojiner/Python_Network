@@ -47,5 +47,5 @@ def get_ifname(ifname):
 
 if __name__ == "__main__":
     # print(ni.interfaces())
-    print(get_ifname("WLAN"))
-    # print(get_ifname("ens33"))
+    # print(get_ifname("WLAN"))
+    print(get_ifname("ens33"))

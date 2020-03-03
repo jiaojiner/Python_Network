@@ -6,6 +6,7 @@
 
 from multiprocessing.pool import ThreadPool
 from scapy.layers.dhcp import DHCP, BOOTP
+from scapy.sendrecv import sniff
 from Tools.Change_MAC_To_Bytes import Change_MAC_To_Bytes
 from Tools.GET_MAC_netifaces import get_mac_address
 from Tools.Change_Chaddr_To_MAC import Change_Chaddr_To_MAC
@@ -103,4 +104,4 @@ def DHCP_FULL(ifname, MAC, timeout=3):
 
 if __name__ == '__main__':
     # 使用Linux解释器 & WIN解释器
-    DHCP_FULL('ens33', get_mac_address('ens33'))
+    DHCP_FULL('WLAN', get_mac_address('WLAN'))
