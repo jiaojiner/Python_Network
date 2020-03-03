@@ -25,7 +25,7 @@ def def_config_id(dbname):
         # print(yourresults)
         id_list.append(min([x[0] for x in yourresults]))
     id_list = sorted(id_list)
-    print(id_list)
+    # print(id_list)
 
     id_time_list = []
     for id in id_list:
