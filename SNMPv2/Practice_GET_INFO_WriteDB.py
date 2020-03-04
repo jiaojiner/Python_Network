@@ -3,6 +3,17 @@
 # 该代码由本人学习时编写，仅供自娱自乐！
 # 本人QQ：1945962391
 # 欢迎留言讨论，共同学习进步！
+
+""" snmp v2c 配置
+snmp-server community tcpipro RO
+snmp-server community tcpiprw RW
+snmp-server location neimenggu
+snmp-server contact NULL
+snmp-server enable traps snmp linkdown linkup
+snmp-server host 192.168.98.29 version 2c csr
+snmp-server host 192.168.98.30 version 2c csr
+"""
+
 import os
 import sqlite3
 from GET import snmpv2_get
