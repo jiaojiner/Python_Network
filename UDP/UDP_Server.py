@@ -21,6 +21,7 @@ print('Server端已准备就绪！等待数据传输')
 while True:
     try:
         data, ipaddr = udp_socket.recvfrom(2048)
+        # print(udp_socket.recvfrom(2048))
         if not data:
             print('客户端程序已退出！服务端即将断开')
             time.sleep(1)
