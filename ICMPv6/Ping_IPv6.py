@@ -15,7 +15,6 @@ def scapy_pingv6_one(host, ifname):
     packet = IPv6(src=get_ipv6_address(ifname), dst=host) / ICMPv6EchoRequest(data="Welcome!!!")
     # 构造Ping数据包
     ping = sr1(packet, timeout=1, verbose=False)  # 获取响应信息，超时为2秒，关闭详细信息
-
     # ping.show()
     try:
         if ping.getlayer(IPv6).fields['src'] == host and ping.getlayer("ICMPv6 Echo Reply").fields['type'] == 129:
