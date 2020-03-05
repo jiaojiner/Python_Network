@@ -17,7 +17,6 @@ def get_connection_name_from_guid(iface_guids):
         # 打开"HKEY_LOCAL_MACHINE"
         reg = wr.ConnectRegistry(None, wr.HKEY_LOCAL_MACHINE)
         # 打开r'SYSTEM\CurrentControlSet\Control\Network\{4d36e972-e325-11ce-bfc1-08002be10318}'
-        #
         reg_key = wr.OpenKey(reg, r'SYSTEM\CurrentControlSet\Control\Network\{4d36e972-e325-11ce-bfc1-08002be10318}')
         for i in range(len(iface_guids)):
             try:
@@ -47,5 +46,7 @@ def get_ifname(ifname):
 
 if __name__ == "__main__":
     # print(ni.interfaces())
-    # print(get_ifname("WLAN"))
-    print(get_ifname("ens33"))
+    # for x in get_connection_name_from_guid(ni.interfaces()):
+    #     print(x)
+    print(get_ifname("WLAN"))
+    # print(get_ifname("ens33"))

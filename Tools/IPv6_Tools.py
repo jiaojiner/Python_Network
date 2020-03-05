@@ -10,18 +10,24 @@ import re
 
 def full_ipv6(ipv6):  # 转换为完整的IPv6地址
     ipv6_section = ipv6.split(":")  # 对原始地址使用":"进行分割
+    # print(ipv6_section)
 
     ipv6_section_len = len(ipv6.split(":"))  # 了解原始地址的分段数量
+    # print(ipv6_section_len)
 
     if ipv6_section.index(''):
         null_location = ipv6_section.index('')  # 找到空位,这个地方要补0
+        # print(null_location)
 
         ipv6_section.pop(null_location)  # 把原来的空位弹出去
+        # print(ipv6_section)
 
         add_section = 8 - ipv6_section_len + 1  # 计算需要补"0000"的个数
+        # print(add_section)
 
         for x in range(add_section):
             ipv6_section.insert(null_location, "0000")  # 开始补"0000"
+            # print(ipv6_section)
 
         new_ipv6 = []
         for s in ipv6_section:
@@ -101,6 +107,7 @@ def ipv6_to_mac(ipv6):
 # netsh interface ipv6 set global randomizeidentifiers=disabled store=active
 # netsh interface ipv6 set global randomizeidentifiers=disabled store=persistent
 
+
 def mac_to_eui64(mac, prefix):
     # 移除多余的字符 空格,冒号,点,减号
     # 转换16进制数到10进制数
@@ -134,4 +141,6 @@ def mac_to_eui64(mac, prefix):
 
 
 if __name__ == '__main__':
-    print(mac_to_eui64(mac='06:b2:4a:00:00:9f', prefix='2001:db8:100::/64'))
+    # print(mac_to_eui64(mac='06:b2:4a:00:00:9f', prefix='2001:db8:100::/64'))
+    # print(ipv6_to_mac('2001::1::1'))
+    full_ipv6('2001:1::1')
