@@ -38,7 +38,6 @@ def icmpv6_ra(ifname):
     prefix = ICMPv6NDOptPrefixInfo(prefix='2001:2::', prefixlen=64)
     # 构建数据包
     packet = base / router_solicitation / src_ll_addr / mtu / prefix
-
     # packet.show()
     # 一直发送,知道客户使用Ctrl + C终止
     while True:
@@ -53,3 +52,4 @@ def icmpv6_ra(ifname):
 if __name__ == '__main__':
     # Windows Linux均可使用
     icmpv6_ra("ens33")
+    # icmpv6_ra("WLAN")

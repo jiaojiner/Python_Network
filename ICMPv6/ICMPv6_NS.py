@@ -13,6 +13,7 @@ from scapy.sendrecv import sr1
 from Tools.GET_MAC_netifaces import get_mac_address
 from Tools.IPv6_Tools import Solicited_node_multicast_address, mac_to_ipv6_linklocal
 import logging
+
 logging.getLogger("scapy.runtime").setLevel(logging.ERROR)  # 清除报错
 
 
