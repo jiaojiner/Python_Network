@@ -18,8 +18,9 @@ def dns_query(dns_name):
     query_pkt = IP(dst="114.114.114.114") / UDP() / DNS(rd=1, qd=DNSQR(qname=dns_name, qtype="A"))
     # query_pkt.show()
     dns_result = sr1(query_pkt, verbose=False)
-    dns_result.show()
-    layer = 1
+    # dns_result.show()
+    # print(dns_result.getlayer(DNS).fields['an'][4].fields['type'])
+    layer = 0
     while True:  # 不太确定DNSRR到底有几组！！！
         try:
             # 如果an(DNS资源记录部分)的类型为1(A)

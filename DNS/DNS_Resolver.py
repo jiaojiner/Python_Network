@@ -29,8 +29,8 @@ def dnspython(domain, Type="A"):
 
 if __name__ == '__main__':
     # 使用Linux解释器 & WIN解释器
-    print(dnspython("cisco.com", Type="A"))
-    print(dnspython("cisco.com", Type="AAAA"))
-    print(dnspython("www.cisco.com", Type="CNAME"))
-    print(dnspython("cisco.com", Type="NS"))
-    print(dnspython("cisco.com", Type="MX"))
+    print(dnspython("cisco.com", 'A'))
+    print(dnspython("cisco.com", "AAAA"))
+    print(dnspython("www.cisco.com", "CNAME"))
+    print(dnspython("cisco.com", "NS"))
+    print(dnspython("cisco.com", "MX"))
