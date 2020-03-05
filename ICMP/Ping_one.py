@@ -40,5 +40,5 @@ if __name__ == '__main__':
         else:
             print('目的', result[0], '不可达！')
     except KeyboardInterrupt:
-        print('成功接收信号，退户程序！')
+        print('成功接收退出信号，退户程序！')
 
