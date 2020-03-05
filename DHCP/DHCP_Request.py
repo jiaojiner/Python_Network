@@ -4,11 +4,12 @@
 # 本人QQ：1945962391
 # 欢迎留言讨论，共同学习进步！
 
-
+import struct
 import time
 from scapy.layers.dhcp import BOOTP, DHCP
 from scapy.layers.inet import IP, UDP
 from scapy.layers.l2 import Ether
+from scapy.sendrecv import sendp
 from DHCP.DHCP_Discover import chaddr
 from Tools.Scapy_IFACE import scapy_iface  # 获取scapy iface的名字
 import logging

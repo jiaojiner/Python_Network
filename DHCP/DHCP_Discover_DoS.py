@@ -24,4 +24,4 @@ def DHCP_Discover_DoS(ifname):
 
 if __name__ == '__main__':
     # 使用Linux解释器 & WIN解释器
-    DHCP_Discover_DoS('ens33')
+    DHCP_Discover_DoS('ens37')

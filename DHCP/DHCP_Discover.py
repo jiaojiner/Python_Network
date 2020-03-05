@@ -75,6 +75,6 @@ def DHCP_Discover_Sendonly(ifname, MAC, wait_time=2):
 
 if __name__ == '__main__':
     # 使用Linux解释器 & WIN解释器
-    Local_MAC = get_mac_address('WLAN')
+    Local_MAC = get_mac_address('ens33')
     # print(Local_MAC)
-    DHCP_Discover_Sendonly('WALN', Local_MAC)
+    DHCP_Discover_Sendonly('ens33', Local_MAC)

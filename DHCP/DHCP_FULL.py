@@ -104,4 +104,4 @@ def DHCP_FULL(ifname, MAC, timeout=3):
 
 if __name__ == '__main__':
     # 使用Linux解释器 & WIN解释器
-    DHCP_FULL('WLAN', get_mac_address('WLAN'))
+    DHCP_FULL('ens33', get_mac_address('ens33'))
