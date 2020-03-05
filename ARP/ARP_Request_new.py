@@ -78,7 +78,7 @@ if __name__ == '__main__':
     print('正在请求', hostname, '的MAC地址，请稍等！')
     time.sleep(2)
     arp_result = arp_request(hostname, iface)
-    if arp_result[1] != None:
+    if arp_result[1] is not None:
         print('请求结果如下：')
         print('主机：', arp_result[0], 'MAC地址为：', arp_result[1])
     else:

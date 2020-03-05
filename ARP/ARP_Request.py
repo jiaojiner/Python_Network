@@ -21,5 +21,5 @@ def arp_request(dst, ifname):
 
 
 if __name__ == '__main__':
-    arp_result = arp_request('192.168.98.29', 'WLAN')
+    arp_result = arp_request('192.168.98.129', 'ens33')
     print('主机：', arp_result[0], 'MAC地址为：', arp_result[1])
