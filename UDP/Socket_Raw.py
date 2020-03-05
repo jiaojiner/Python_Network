@@ -123,13 +123,13 @@ if __name__ == "__main__":
     src_ip = "192.168.98.29"
 
     # UDP传输数据
-    udp_data = "cisco123456"
+    udp_data = "socket_raw"
     # 计算IP总长度
     t_length = 20 + 8 + len(udp_data)
     # 计算UDP总长度
     u_length = 8 + len(udp_data)
     # 产生以太网头部
-    ether_header = Ether("00-50-56-c0-00-08", "00:0c:29:8f:b4:f1", "0800")
+    ether_header = Ether("00:0c:29:8f:b4:f1", "00-50-56-C0-00-08", "0800")
     # 产生IP头部
     ip_header = IP(Total_Length=t_length, IP_Flags_D=0, IP_Flags_M=0, Offset=0, TTL=128, Protocol=17, src=src_ip,
                    dst=dst_ip)
