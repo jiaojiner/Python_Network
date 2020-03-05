@@ -18,7 +18,7 @@ while True:
     try:
         data = input('请输入需要传输的数据：')
         if not data:  # 如果无数据输入，发送空数据，并退出循环
-            udp_socket.sendto(data.encode(), ipaddress)
+            udp_socket.sendto(data.encode(), ipaddress)  # 需将数据编码发送
             print('无数据输入，程序即将退出！')
             time.sleep(1)
             break

@@ -10,7 +10,7 @@ import sys
 import time
 
 localnets = input('请输入需要监听的网卡名称：')
-localport = input('请输入需要监听的端口：')
+localport = input('请输入需要监听的端口：')  # input传入的数据类型为string
 localip = GET_IP_netifaces.get_ip_address(localnets)
 ipadress = (localip, int(localport))
 udp_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)  # 创建udp的socket套接字
