@@ -18,7 +18,6 @@ def ftpclient(server, filedir, file, operation=1):
 
 if __name__ == '__main__':
     # 使用Linux解释器 & WIN解释器
-    # 正常安装有问题,需要把minimumTFTP.py文件放入如下的路径
-
+    # 正常安装有问题,需要的minimumTFTP.py在Tools目录下
     # ftpclient('192.168.98.29', '/root/python_network/TFTP', 'test.txt', operation=1)
     ftpclient('192.168.98.29', '/root/python_network/TFTP', '1.txt', operation=2)
