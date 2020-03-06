@@ -21,7 +21,7 @@ logging.basicConfig(level=logging.INFO,
 class SyslogUDPHandler(socketserver.BaseRequestHandler):
     def handle(self):
         data = bytes.decode(self.request[0].strip())  # 读取数据
-        # ============可以配置过滤器仅仅读取接口up/down信息===============
+        # ============可以配置过滤器仅仅读取接口up/down信息================
         # if re.match('.*changed state to administratively down.*', data):
         #     print( "%s : " % self.client_address[0], str(data))
         # elif re.match('.*changed state to up.*', data):

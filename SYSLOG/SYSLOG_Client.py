@@ -46,5 +46,5 @@ class Syslog:
 
 if __name__ == "__main__":
     # 使用Linux解释器 & WIN解释器
-    log = Syslog("192.168.98.29")
+    log = Syslog("192.168.98.130")
     log.send("syslog test", Level.NOTICE)
