@@ -20,7 +20,6 @@ from pysnmp.entity.rfc3413.oneliner import cmdgen
 
 def snmpv2_getnext(ip, community, oid, port=161):
     cmdGen = cmdgen.CommandGenerator()
-
     errorIndication, errorStatus, errorindex, varBindTable = cmdGen.nextCmd(
         cmdgen.CommunityData(community),  # 设置community
         cmdgen.UdpTransportTarget((ip, port)),  # 设置IP地址和端口号

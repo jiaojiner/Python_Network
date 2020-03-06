@@ -41,7 +41,7 @@ def snmpv2_get(ip, community, oid, port=161):
     # 如果返回结果有多行,需要拼接后返回
     result = ""
     for varBind in varBinds:
-        result = result + varBind.prettyPrint()  # 返回结果！
+        result += varBind.prettyPrint()  # 返回结果！
     # 返回的为一个元组,OID与字符串结果
     return result.split("=")[0].strip(), result.split("=")[1].strip()
 

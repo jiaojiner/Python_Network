@@ -112,7 +112,6 @@ def cbFun(transportDispatcher, transportDomain, transportAddress, wholeMsg):  # 
 def snmp_trap_receiver(ifname, port=162):
     if_ip = get_ip_address(ifname)
     transportDispatcher = AsynsockDispatcher()  # 创建实例
-
     transportDispatcher.registerRecvCbFun(cbFun)  # 调用处理Trap信息的函数
 
     # UDP/IPv4

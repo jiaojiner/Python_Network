@@ -19,7 +19,6 @@ from pysnmp.entity.rfc3413.oneliner import cmdgen
 
 def snmpv2_getbulk(ip, community, oid, count=25, port=161):
     cmdGen = cmdgen.CommandGenerator()
-
     errorIndication, errorStatus, errorindex, varBindTable = cmdGen.bulkCmd(
         cmdgen.CommunityData(community),  # 配置community
         cmdgen.UdpTransportTarget((ip, port)),  # 配置IP地址和端口号

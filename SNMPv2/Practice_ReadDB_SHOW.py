@@ -51,7 +51,7 @@ def cpu_show(dbname):
     ax.yaxis.set_major_formatter(mtick.FormatStrFormatter('%d%%'))  # 格式化Y轴
     # 传入数据,time为X轴,cpu为Y轴
     ax.plot(time_list, cpu_list)
-    # 设置Y轴 最小值 和 最大值
+    # 设置Y轴 最小值和最大值
     ax.set_ylim(ymin=0, ymax=100)
     # 显示图像
     plt.show()

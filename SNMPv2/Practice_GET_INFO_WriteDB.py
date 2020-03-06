@@ -29,7 +29,7 @@ def get_info_writedb(ip, rocommunity, dbname, seconds):
     conn = sqlite3.connect(dbname)
     cursor = conn.cursor()
     # 创建数据库
-    cursor.execute(\
+    cursor.execute(
         "create table routerdb(id INTEGER PRIMARY KEY AUTOINCREMENT, time varchar(64), cpu int, memu int, memf int)")
 
     while seconds >= 0:
