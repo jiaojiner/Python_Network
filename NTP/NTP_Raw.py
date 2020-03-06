@@ -24,7 +24,7 @@ def ntp_client(ntp_server):
     print(s)
     t = struct.unpack('!12I', data)[-2]  # 倒数第二个为时间
     print(t)
-    t -= TIME_1970  # Linux 自己的系統時間，由 1970/01/01 開始記錄的時間參數
+    t -= TIME_1970  # Linux 自己的系统时间，由 1970/01/01 开始计时的时间参数
     # print(t)
     print('\tTime=%s' % time.ctime(t))
 

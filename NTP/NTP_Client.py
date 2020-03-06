@@ -14,7 +14,7 @@ def ntp_client(ntp_server):
         response = ntp.request(ntp_server, version=3)
         print('同步时间：', ctime(response.tx_time))
     except:
-        print(ntp_server, '无响应，请更换地址后尝试！')
+        print(ntp_server, '无响应，请更换地址后再进行尝试！')
 
 
 if __name__ == '__main__':
