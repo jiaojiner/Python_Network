@@ -13,7 +13,7 @@ def SSHClient_MultiCMD(ip, username, password, cmd_list, enable_password='csr', 
     ssh = paramiko.SSHClient()  # 创建SSH Client
     ssh.load_system_host_keys()  # 加载系统SSH密钥
     ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())  # 添加新的SSH密钥
-    ssh.connect(ip, port=22, username=username, password=password, timeout=5, compress=True)  # SSH连接
+    ssh.connect(ip, port=22, username=username, password=password, timeout=5, compress=True)  # SSH连接 如果主机之前已经存在本地密钥链，则会报错认证失败，加上look_for_keys=False即可解决
 
     chan = ssh.invoke_shell()  # 激活交互式shell
     time.sleep(1)
